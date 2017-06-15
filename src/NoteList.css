@@ -5,6 +5,16 @@
   box-sizing: border-box;
   background-image: url("https://s-media-cache-ak0.pinimg.com/736x/bd/da/47/bdda47151b710aec794e3264405c3863.jpg");
 }
+/*i.fa-trash-o {
+  cursor: pointer;
+  color: #ccc;
+  vertical-align: middle;
+  margin-left: 1em; 
+}
+
+i.fa-trash-o:hover {
+    color: #999; 
+}*/
 
 @media (max-width: 800px) {
   .NoteList {
@@ -35,7 +45,7 @@ ul#notes {
 }
 
 ul#notes > li {
-  height: 100px;
+  height: 120px;
   font-size: 90%;
   cursor: pointer;
   overflow: hidden;
