@@ -2,41 +2,28 @@ import React, { Component } from 'react'
 import './NoteForm.css'
 
 class NoteForm extends Component{
-    constructor(){
-        super()
-        this.state = {
+    constructor(props){
+        super(props)
+        this.state={
+            note: this.blankNote(), 
+        }
+    }
+
+    blankNote = () => {
+        return {
+            id: null,
             title: '',
             body: '',
-            notes: [],
         }
-        this.saveNote = this.saveNote.bind(this)
-        this.updateNoteTitle = this.updateNoteTitle.bind(this)
-        this.updateNoteBody = this.updateNoteBody.bind(this)
     }
-    updateNoteTitle(ev){
-        this.setState({
-            title: ev.target.value
-        })
 
-    }
-    updateNoteBody(ev){
-        this.setState({
-            body: ev.target.value
-        })
-    }
-    saveNote(ev){
-        ev.preventDefault()
-        const note = {
-            title: this.state.title,
-            body: this.state.body
-        }
-        const state = {...this.state}
-        state.notes.push(note)
-        state.title = ''
-        state.body = ''
-        this.setState(state)
-        localStorage
-            .setItem('notes', JSON.stringify(this.state.notes))
+    handleChanges = (ev) => {
+        const note = {...this.state.note}
+        note[ev.target.name] = ev.target.value
+        this.setState(
+            { note }, 
+            ()=>this.props.saveNote(this.state.note)
+        )
     }
 
     render(){
@@ -48,16 +35,16 @@ class NoteForm extends Component{
                             type="text" 
                             name="title" 
                             placeholder="Title your note" 
-                            value={this.state.title}
-                            onChange={this.updateNoteTitle}
+                            onChange={this.handleChanges}
+                            value={this.state.note.title}
                         />
                     </p>
                     <p>
                         <textarea 
                             name="body" 
                             placeholder="Just start typing..."
-                            value={this.state.body}
-                            onChange={this.updateNoteBody}
+                            onChange={this.handleChanges}
+                            value={this.state.note.body}
                         ></textarea>
                     </p>
                     <button 
