@@ -36,7 +36,7 @@ input[name="title"] {
   border: none;
   font-size: 200%;
   font-family: "Fauna One";
-  color: #008BF8;
+  color: #2d2205;
   font-weight: 400;
   width: 100%;
   background: none;
@@ -50,4 +50,5 @@ textarea {
   height: calc(100vh - 140px);
   font-size: 1.3em;
   background: none;
+  color:#2d2205;
 }

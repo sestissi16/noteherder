@@ -1,25 +1,24 @@
-.App {
-  text-align: center;
+html {
   font-size: 10px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  font-size: 14px;
+  line-height: 1.42857143;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+img {
+  vertical-align: middle;
 }
 
-.App-intro {
-  font-size: large;
+h1, h2, h3, h4, h5 {
+font-family: "Fauna One";
+font-weight: 400;
+color: #008BF8; }
+
+.App {
+  font-family: Oxygen, Helvetica, Arial, sans-serif; 
+  box-sizing: border-box
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
