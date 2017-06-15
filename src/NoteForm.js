@@ -55,14 +55,17 @@ class NoteForm extends Component{
                     <p>
                         <textarea 
                             name="body" 
-                            cols="30" 
-                            rows="10" 
                             placeholder="Just start typing..."
                             value={this.state.body}
                             onChange={this.updateNoteBody}
                         ></textarea>
                     </p>
-                    <button onClick={this.saveNote} className="button">Save form</button>
+                    <button 
+                        onClick={this.saveNote} 
+                        className="button"
+                    >
+                        Save form
+                    </button>
                 </form>
             </div>
         )
