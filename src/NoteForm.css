@@ -1,7 +1,9 @@
 .NoteForm {
   flex-grow: 1;
   padding: 0 3rem;
-  box-sizing: border-box; 
+  box-sizing: border-box;
+  /*background-image: url("http://www.myfreetextures.com/wp-content/uploads/2011/06/grungy-rough-old-worn-parchment-paper.jpg");  */
+  background-image: url("http://www.powerpointhintergrund.com/download/grunge-parchment-background-3395")
 }
 .NoteForm .form-actions {
   padding-top: 1rem;
@@ -30,13 +32,15 @@ input[name="title"] {
   color: #008BF8;
   font-weight: 400;
   width: 100%;
+  background: none;
 }
 input[name="title"] {
   outline: none;
 }
 textarea {
-  border-color: #eee;
+  border-color: #3a3827;
   width: 100%;
   height: calc(100vh - 140px);
   font-size: 1.3em;
+  background: none;
 }

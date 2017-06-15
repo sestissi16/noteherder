@@ -5,7 +5,7 @@ img {
 .Sidebar {
   width: 60px;
   left:0px;
-  background-color: #f3f3f3;
+  background-color: rgba(48, 37, 0, 0.9);
   padding: 0.5rem 0; 
   display: flex; 
   flex-direction: column; 

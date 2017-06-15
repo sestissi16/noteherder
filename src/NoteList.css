@@ -3,6 +3,7 @@
   border-right: 1px solid #eee;
   width: 30rem;
   box-sizing: border-box;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/736x/bd/da/47/bdda47151b710aec794e3264405c3863.jpg");
 }
 
 @media (max-width: 800px) {
@@ -12,7 +13,8 @@
 }
 
 .NoteList h3 {
-  color: #999;
+  /*color: #999;*/
+  color: #fff;
   text-transform: uppercase;
   font-size: 2rem;
   font-family: Oxygen;
@@ -37,6 +39,7 @@ ul#notes > li {
   font-size: 90%;
   cursor: pointer;
   overflow: hidden;
+  background-color: rgba(196, 190, 170, 0.8);
 }
 
 ul#notes > li,
@@ -64,7 +67,7 @@ ul#notes li:hover .note {
   border-color: transparent;
 }
 ul#notes li .note-title {
-  color: #4a4a4a;
+  color: rgb(68, 65, 55);
   font-family: "Fauna One";
   font-size: 120%;
   font-weight: 400;
@@ -81,7 +84,7 @@ ul#notes li .note-body * {
   font-size: 1em !important;
   margin: 0 !important;
   padding: 0 !important;
-  color: #999 !important;
+  color: #000 !important;
   background: none;
   border: none;
 }
