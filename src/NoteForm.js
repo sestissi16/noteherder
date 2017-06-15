@@ -7,6 +7,7 @@ class NoteForm extends Component{
         this.state = {
             title: '',
             body: '',
+            notes: [],
         }
         this.saveNote = this.saveNote.bind(this)
         this.updateNoteTitle = this.updateNoteTitle.bind(this)
@@ -25,21 +26,17 @@ class NoteForm extends Component{
     }
     saveNote(ev){
         ev.preventDefault()
-        return(
-            // console.log(this.state)
-            <li>
-                <div className="note">
-                    <div className="note-title">
-                        {this.state.title}
-                    </div>
-                    <div className="note-body">
-                        <p>
-                            {this.state.body}
-                        </p>
-                    </div>
-                </div>
-            </li>
-        )
+        const note = {
+            title: this.state.title,
+            body: this.state.body
+        }
+        const state = {...this.state}
+        state.notes.push(note)
+        state.title = ''
+        state.body = ''
+        this.setState(state)
+        localStorage
+            .setItem('notes', JSON.stringify(this.state.notes))
     }
 
     render(){
