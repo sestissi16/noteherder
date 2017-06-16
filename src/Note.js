@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Note = ({ note }) => {
+const Note = ({ note, deleteListItem }) => {
     return(
         <li>
             <div className="note">
@@ -12,12 +12,7 @@ const Note = ({ note }) => {
                         {note.body}
                     </p>
                 </div>
-                <a className="delBtnn" /*onClick={this.deleteNote.bind(this)}*/>
-                    {/*<i 
-                    className="fa-trash-o"
-                    aria-hidden="true"
-                    >
-                    </i>*/}
+                <a className="delBtnn" onClick={deleteListItem}>
                     🗑️
                 </a>
             </div>
