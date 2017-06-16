@@ -6,8 +6,6 @@ const NoteList = ({ notes }) => {
     const deleteListItem = (ev)=> {
         ev.preventDefault()
         ev.target.parentElement.parentElement.remove()
-        console.log(ev.target)
-        
     }
     return(
         <div className="NoteList">

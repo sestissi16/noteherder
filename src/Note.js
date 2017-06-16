@@ -12,7 +12,7 @@ const Note = ({ note, deleteListItem }) => {
                         {note.body}
                     </p>
                 </div>
-                <a className="delBtnn" onClick={deleteListItem}>
+                <a className="delBtn" onClick={deleteListItem}>
                     🗑️
                 </a>
             </div>

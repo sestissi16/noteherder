@@ -104,3 +104,9 @@ ul#notes li .note {
   padding: 1em;
   text-decoration: none;
 }
+ul#notes li .note .delBtn {
+  padding: 1rem;
+  background-color: rgba(124, 117, 74, 0.8);
+  border-radius: 4px;
+
+}
