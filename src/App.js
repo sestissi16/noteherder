@@ -11,7 +11,7 @@ class App extends Component {
     super()
     this.state = {
       notes: {},
-      currentNote: {},
+      currentNote: null,
       uid: null,
     }
     

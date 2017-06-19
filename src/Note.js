@@ -11,21 +11,23 @@ const Note = ({ note, deleteListItem, selectItem }) => {
     }
 
     return(
-        <li onClick={handleSelect}>
-            <div className="note" id={note.id}>
-                <div className="note-title"> 
-                    {note.title} 
+        <a onClick={handleSelect}>
+            <li>
+                <div className="note" id={note.id}>
+                    <div className="note-title"> 
+                        {note.title} 
+                    </div>
+                    <div className="note-body">
+                        <p>
+                            {note.body}
+                        </p>
+                    </div>
+                    <a className="delBtn" onClick={deleteItem}>
+                        <span role="img" aria-label>🗑️</span>
+                    </a>
                 </div>
-                <div className="note-body">
-                    <p>
-                        {note.body}
-                    </p>
-                </div>
-                <a className="delBtn" onClick={deleteItem}>
-                    <span role="img" aria-label>🗑️</span>
-                </a>
-            </div>
-        </li>
+            </li>
+        </a>
     )
 }
 
