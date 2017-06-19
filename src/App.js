@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Main from './Main'
+import base from './base'
+import SignIn from './SignIn'
+import SignOut from './SignOut'
 
 
 class App extends Component {
@@ -12,6 +15,17 @@ class App extends Component {
     }
     
   }
+
+  componentWillMount() {
+    base.syncState(
+      'notes',
+      {
+        context: this,
+        state:'notes',
+      }
+    )
+  }
+
   deleteListItem = (note)=> {
     const notes = {...this.state.notes}  
     delete notes[note.id]
@@ -44,26 +58,39 @@ class App extends Component {
     this.setState({ notes, currentNote:note })
   }
 
-  blankNote = () => {
-        return {
-            id: null,
-            title: '',
-            body: '',
-        }
-    }
+  signedIn = () => {
+    return true
+  }
+
+  renderMain = () => {
+    return(
+      <div>
+        <SignOut />
+        <Main 
+            notes={this.state.notes}
+            currentNote={this.state.currentNote} 
+            saveNote={this.saveNote}  
+            deleteListItem={this.deleteListItem}
+            selectItem={this.selectItem}
+            newNoteFunc={this.newNoteFunc} 
+          />
+      </div>
+    )
+  }
+
+  // blankNote = () => {
+  //       return {
+  //           id: null,
+  //           title: '',
+  //           body: '',
+  //       }
+  //   }
 
 
   render() {
     return (
       <div className="App">
-        <Main 
-          notes={this.state.notes}
-          currentNote={this.state.currentNote} 
-          saveNote={this.saveNote}  
-          deleteListItem={this.deleteListItem}
-          selectItem={this.selectItem}
-          newNoteFunc={this.newNoteFunc} 
-        />
+        { this.signedIn() ? this.renderMain() : <SignIn />}
       </div>
     );
   }
