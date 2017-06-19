@@ -1,13 +1,17 @@
 import React from 'react'
 
-const Note = ({ note, deleteListItem }) => {
+const Note = ({ note, deleteListItem, selectItem }) => {
     const deleteItem = (ev) =>{
         ev.preventDefault()
         deleteListItem(note)
     }
+    const handleSelect = (ev) =>{
+        ev.preventDefault()
+        selectItem(note)
+    }
 
     return(
-        <li>
+        <li onClick={handleSelect}>
             <div className="note" id={note.id}>
                 <div className="note-title"> 
                     {note.title} 

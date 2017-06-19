@@ -7,7 +7,7 @@ import newIcon from './new.png'
 const Sidebar = () =>{
     // const handleClick = (ev) => {
     //     ev.preventDefault()
-    //     this.setState({ note: blankNote})
+        
     // }
     return(
         <nav className="Sidebar">

@@ -8,6 +8,11 @@ class NoteForm extends Component{
             note: this.blankNote(), 
         }
     }
+    componentWillReceiveProps(nextProps){
+        if(nextProps.currentNote){
+            this.setState({note: nextProps.currentNote})
+        }
+    }
 
     blankNote = () => {
         return {
