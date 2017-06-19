@@ -23,9 +23,17 @@ class App extends Component {
     
   }
 
-  // newNote = ()=>{
-    
-  // }
+  newNoteFunc = ()=>{
+    const note = {
+      id: `note-${Date.now()}`,
+      title: '',
+      body:'',
+    }
+    const notes={...this.state.notes}
+    notes[note.id] = note
+
+    this.setState({notes: notes, cuurrentNote: note})
+  }
 
   saveNote = (note) => {
     if(!note.id){
@@ -51,10 +59,10 @@ class App extends Component {
         <Main 
           notes={this.state.notes}
           currentNote={this.state.currentNote} 
-          saveNote={this.saveNote} 
-          blankNote={this.blankNote} 
+          saveNote={this.saveNote}  
           deleteListItem={this.deleteListItem}
-          selectItem={this.selectItem} 
+          selectItem={this.selectItem}
+          newNoteFunc={this.newNoteFunc} 
         />
       </div>
     );

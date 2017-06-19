@@ -8,9 +8,16 @@ const Main = (props) =>{
     
     return(
         <div className="Main">
-            <Sidebar />
-            <NoteList notes={props.notes} deleteListItem={props.deleteListItem} selectItem={props.selectItem} />
-            <NoteForm saveNote={props.saveNote} currentNote={props.currentNote} />
+            <Sidebar newNoteFunc={props.newNoteFunc} />
+            <NoteList 
+                notes={props.notes} 
+                deleteListItem={props.deleteListItem} 
+                selectItem={props.selectItem} 
+            />
+            <NoteForm 
+                saveNote={props.saveNote} 
+                currentNote={props.currentNote} 
+            />
         </div>
     )
 }
