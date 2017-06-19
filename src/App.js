@@ -60,10 +60,10 @@ class App extends Component {
       title: '',
       body:'',
     }
-    const notes={...this.state.notes}
-    notes[note.id] = note
+    // const notes={...this.state.notes}
+    // notes[note.id] = note
 
-    this.setState({notes: notes, cuurrentNote: note})
+    this.setState({currentNote: note})
   }
 
   saveNote = (note) => {
@@ -72,7 +72,7 @@ class App extends Component {
     }
     const notes = {...this.state.notes}
     notes[note.id] = note 
-    this.setState({ notes, currentNote:note })
+    this.setState({ notes, currentNote: note })
   }
 
   signedIn = () => {

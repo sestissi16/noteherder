@@ -1,6 +1,6 @@
 {
   "name": "noteherder",
-  "homepage" : "http://sestissi16.github.io/noteherder",
+  "homepage": "http://sestissi16.github.io/noteherder",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +9,7 @@
     "react-dom": "^15.6.0"
   },
   "devDependencies": {
+    "gh-pages": "^1.0.0",
     "react-scripts": "1.0.7"
   },
   "scripts": {
