@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Main from './Main'
-import base from './base'
+import base, { auth } from './base'
 import SignIn from './SignIn'
 import SignOut from './SignOut'
 
@@ -68,7 +68,9 @@ class App extends Component {
   }
 
   signOut = () => {
-    this.setState({ uid: null })
+    auth
+      .signOut()
+      .then(this.setState({ uid: null }))
   }
 
   renderMain = () => {
@@ -86,14 +88,6 @@ class App extends Component {
       </div>
     )
   }
-
-  // blankNote = () => {
-  //       return {
-  //           id: null,
-  //           title: '',
-  //           body: '',
-  //       }
-  //   }
 
 
   render() {
