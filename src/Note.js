@@ -22,7 +22,7 @@ const Note = ({ note, deleteListItem, selectItem }) => {
                     </p>
                 </div>
                 <a className="delBtn" onClick={deleteItem}>
-                    🗑️
+                    <span role="img" aria-label>🗑️</span>
                 </a>
             </div>
         </li>

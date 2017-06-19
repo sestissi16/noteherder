@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   syncNotes = () => {
-    base.syncState(
+    this.ref = base.syncState(
       `${this.state.uid}/notes`,
       {
         context: this,
@@ -44,8 +44,9 @@ class App extends Component {
 
   deleteListItem = (note)=> {
     const notes = {...this.state.notes}  
-    delete notes[note.id]
-    this.setState({ notes })        
+    notes[note.id] = null
+    this.setState({ notes })
+            
   }
   
   selectItem = (currentNote)=>{
@@ -86,18 +87,28 @@ class App extends Component {
   }
 
   signOut = () => {
-    auth.signOut()
+    auth
+      .signOut()
+      .then(
+        () => {
+          base.removeBinding(this.ref)
+          this.setState({ notes: {} })
+        }
+      )
   }
 
   renderMain = () => {
+    const actions ={
+      saveNote: this.saveNote,
+      deleteListItem: this.deleteListItem,
+    }
     return(
       <div>
         <SignOut signOut={this.signOut} />
         <Main 
             notes={this.state.notes}
             currentNote={this.state.currentNote} 
-            saveNote={this.saveNote}  
-            deleteListItem={this.deleteListItem}
+            {...actions}
             selectItem={this.selectItem}
             newNoteFunc={this.newNoteFunc} 
           />
