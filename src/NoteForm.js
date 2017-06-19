@@ -26,10 +26,7 @@ class NoteForm extends Component{
         )
     }
 
-    handleSubmit = (ev) => {
-        ev.preventDefault()
-        this.setState({ note: this.blankNote()})
-    }
+    
 
     render(){
         return(
@@ -52,12 +49,12 @@ class NoteForm extends Component{
                             value={this.state.note.body}
                         ></textarea>
                     </p>
-                    <button 
+                    {/*<button 
                         type="submit" 
                         className="button"
                     >
                         Save and new
-                    </button>
+                    </button>*/}
                 </form>
             </div>
         )

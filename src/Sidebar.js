@@ -5,6 +5,10 @@ import newHover from './new-hover.png'
 import newIcon from './new.png'
 
 const Sidebar = () =>{
+    // const handleClick = (ev) => {
+    //     ev.preventDefault()
+    //     this.setState({ note: blankNote})
+    // }
     return(
         <nav className="Sidebar">
             <div className="logo">

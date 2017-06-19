@@ -1,9 +1,14 @@
 import React from 'react'
 
 const Note = ({ note, deleteListItem }) => {
+    const deleteItem = (ev) =>{
+        ev.preventDefault()
+        deleteListItem(note)
+    }
+
     return(
         <li>
-            <div className="note">
+            <div className="note" id={note.id}>
                 <div className="note-title"> 
                     {note.title} 
                 </div>
@@ -12,7 +17,7 @@ const Note = ({ note, deleteListItem }) => {
                         {note.body}
                     </p>
                 </div>
-                <a className="delBtn" onClick={deleteListItem}>
+                <a className="delBtn" onClick={deleteItem}>
                     🗑️
                 </a>
             </div>
