@@ -54,12 +54,6 @@ class NoteForm extends Component{
                             value={this.state.note.body}
                         ></textarea>
                     </p>
-                    {/*<button 
-                        type="submit" 
-                        className="button"
-                    >
-                        Save and new
-                    </button>*/}
                 </form>
             </div>
         )

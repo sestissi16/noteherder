@@ -91,6 +91,7 @@ class App extends Component {
       .signOut()
       .then(
         () => {
+          //stop syncing with Firebase
           base.removeBinding(this.ref)
           this.setState({ notes: {} })
         }
