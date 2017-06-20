@@ -1,0 +1,15 @@
+.SignOutButton{
+    border-radius: 100%;
+    border: 1px solid #008BF8;
+    background-color: #ffffff;
+    color: #008BF8;
+    padding: 5px 2px 5px 2px;
+    margin-left: 9px;
+    margin-right:9px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-in-out;
+}
+.SignOutButton:hover {
+    background-color: #008BF8;
+    color:#ffffff;
+}

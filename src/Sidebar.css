@@ -19,7 +19,7 @@
   padding-left: 4px;
 }
 
-.Sidebar button {
+.Sidebar .new-note {
   background-color: transparent;
   border: 0;
   color: #008BF8;
@@ -27,14 +27,18 @@
   margin-top: 2rem;
   position: relative;
   width: 60%; }
-  .Sidebar button img {
+  .Sidebar .new-note img {
     position: absolute;
     left: 0;
     width: 100%;
     transition: opacity 0.25s ease-in-out; }
-    .Sidebar button:hover img.outline {
+    .Sidebar .new-note:hover img.outline {
       opacity: 0; }
 
-.SignOut button{
-  display:block;
+.SignOutBtn{
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: opacity 0.25s ease-in-out;
 }
