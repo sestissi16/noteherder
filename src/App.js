@@ -3,7 +3,6 @@ import './App.css';
 import Main from './Main'
 import base, { auth } from './base'
 import SignIn from './SignIn'
-import SignOut from './SignOut'
 
 
 class App extends Component {
@@ -48,6 +47,13 @@ class App extends Component {
     this.setState({ notes })
             
   }
+  blankNote = () => {
+        return {
+            id: null,
+            title: '',
+            body: '',
+        }
+    }
   
   selectItem = (currentNote)=>{
     this.setState({ currentNote }, ()=>{console.log(this.state.currentNote)}) 
@@ -105,13 +111,13 @@ class App extends Component {
     }
     return(
       <div>
-        <SignOut signOut={this.signOut} />
         <Main 
             notes={this.state.notes}
             currentNote={this.state.currentNote} 
             {...actions}
             selectItem={this.selectItem}
             newNoteFunc={this.newNoteFunc} 
+            signOut={this.signOut}
           />
       </div>
     )

@@ -34,3 +34,7 @@
     transition: opacity 0.25s ease-in-out; }
     .Sidebar button:hover img.outline {
       opacity: 0; }
+
+.SignOut button{
+  display:block;
+}

@@ -8,7 +8,7 @@ const Main = (props) =>{
     
     return(
         <div className="Main">
-            <Sidebar newNoteFunc={props.newNoteFunc} />
+            <Sidebar newNoteFunc={props.newNoteFunc} signOut={props.signOut} />
             <NoteList 
                 notes={props.notes} 
                 deleteListItem={props.deleteListItem} 
