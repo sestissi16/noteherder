@@ -15,19 +15,27 @@ const SignIn = () => {
     }
 
     return(
-        <div className="buttons">
-            <button 
-                className="SignInGithub"
-                onClick={authenticateGit}
-            >
-                Sign in with Github!
-            </button>
-            <button
-                className="SignInFacebook"
-                onClick={authenticateFace}
-            >
-                Sign in with Facebook!
-            </button>
+        <div className="SignInPage">
+            <div className="Header">
+                <h1><strong>Welcome to Noteherder!</strong></h1>
+                <h3>Where we round up all of those pesky lose notes!</h3>
+            </div>
+            <div className="buttons">
+                <button 
+                    className="SignInGithub"
+                    onClick={authenticateGit}
+                >
+                    <img className="github-pic" src="https://cdn.worldvectorlogo.com/logos/github-icon.svg" alt="github logo"/>
+                    Sign in with Github!
+                </button>
+                <button
+                    className="SignInFacebook"
+                    onClick={authenticateFace}
+                >
+                    <img className="facebook-pic" src="http://www.freeiconspng.com/uploads/facebook-announces-clickable-hashtags--resolution-media-17.png" alt="facebook logo" />
+                    Sign in with Facebook!
+                </button>
+            </div>
         </div>
     )
 }

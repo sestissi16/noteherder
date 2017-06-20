@@ -110,3 +110,7 @@ ul#notes a li .note .delBtn {
   border-radius: 4px;
 
 }
+ul#notes a lit .note .delBtn:hover{
+  background-color:#bff6ff;
+  box-shadow: 2px 2px #242e30;
+}
