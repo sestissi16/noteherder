@@ -24,7 +24,7 @@ const Note = ({ note, deleteListItem, selectItem }) => {
                     </div>
                     <div className="note-button">
                         <button className="delBtn" onClick={deleteItem}>
-                            🗑️
+                            <span role="img" aria-label="delete">🗑️</span>
                         </button>
                     </div>
                 </div>
