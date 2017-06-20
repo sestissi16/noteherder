@@ -10,7 +10,7 @@ class App extends Component {
     super()
     this.state = {
       notes: {},
-      currentNote: null,
+      currentNote: this.blankNote(),
       uid: null,
     }
     
@@ -44,6 +44,7 @@ class App extends Component {
   deleteListItem = (note)=> {
     const notes = {...this.state.notes}  
     notes[note.id] = null
+    this.resetCurrentNote()
     this.setState({ notes })
             
   }
@@ -55,6 +56,9 @@ class App extends Component {
         }
     }
   
+  resetCurrentNote = ()=> {
+   this.selectItem(this.blankNote())
+ }
   selectItem = (currentNote)=>{
     this.setState({ currentNote }, ()=>{console.log(this.state.currentNote)}) 
     

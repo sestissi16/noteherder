@@ -2,48 +2,28 @@ import React, { Component } from 'react'
 import './NoteForm.css'
 
 class NoteForm extends Component{
-    constructor(props){
-        super(props)
-        this.state={
-            note: this.blankNote(), 
-        }
-    }
-    componentWillReceiveProps(nextProps){
-        if(nextProps.currentNote){
-            this.setState({note: nextProps.currentNote})
-        }
-    }
-
-    blankNote = () => {
-        return {
-            id: null,
-            title: '',
-            body: '',
-        }
-    }
 
     handleChanges = (ev) => {
-        const note = {...this.state.note}
+        const note = {...this.props.currentNote}
         note[ev.target.name] = ev.target.value
         this.setState(
             { note }, 
-            ()=>this.props.saveNote(this.state.note)
+            ()=>this.props.saveNote(note)
         )
     }
 
-    
 
     render(){
         return(
             <div className="NoteForm">
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <p>
                         <input 
                             type="text" 
                             name="title" 
                             placeholder="Title your note" 
                             onChange={this.handleChanges}
-                            value={this.state.note.title}
+                            value={this.props.currentNote.title}
                         />
                     </p>
                     <p>
@@ -51,7 +31,7 @@ class NoteForm extends Component{
                             name="body" 
                             placeholder="Just start typing..."
                             onChange={this.handleChanges}
-                            value={this.state.note.body}
+                            value={this.props.currentNote.body}
                         ></textarea>
                     </p>
                 </form>
