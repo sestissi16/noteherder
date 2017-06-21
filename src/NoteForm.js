@@ -5,11 +5,8 @@ class NoteForm extends Component{
 
     handleChanges = (ev) => {
         const note = {...this.props.currentNote}
-        note[ev.target.name] = ev.target.value
-        this.setState(
-            { note }, 
-            ()=>this.props.saveNote(note)
-        )
+        note[ev.target.name] = ev.target.value 
+        this.props.saveNote(note)
     }
 
 

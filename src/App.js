@@ -44,8 +44,12 @@ class App extends Component {
   deleteListItem = (note)=> {
     const notes = {...this.state.notes}  
     notes[note.id] = null
-    this.resetCurrentNote()
-    this.setState({ notes })
+    const blank = {
+      id: `note-${Date.now()}`,
+      title: '',
+      body: '',
+    }
+    this.setState({ notes, currentNote: blank })
             
   }
   blankNote = () => {
@@ -58,7 +62,7 @@ class App extends Component {
   
   resetCurrentNote = ()=> {
    this.selectItem(this.blankNote())
- }
+  }
   selectItem = (currentNote)=>{
     this.setState({ currentNote }, ()=>{console.log(this.state.currentNote)}) 
     
@@ -103,7 +107,7 @@ class App extends Component {
         () => {
           //stop syncing with Firebase
           base.removeBinding(this.ref)
-          this.setState({ notes: {} })
+          this.setState({ notes: {}, currentNote: this.blankNote() })
         }
       )
   }
@@ -114,16 +118,14 @@ class App extends Component {
       deleteListItem: this.deleteListItem,
     }
     return(
-      <div>
-        <Main 
-            notes={this.state.notes}
-            currentNote={this.state.currentNote} 
-            {...actions}
-            selectItem={this.selectItem}
-            newNoteFunc={this.newNoteFunc} 
-            signOut={this.signOut}
-          />
-      </div>
+      <Main 
+          notes={this.state.notes}
+          currentNote={this.state.currentNote} 
+          {...actions}
+          selectItem={this.selectItem}
+          newNoteFunc={this.newNoteFunc} 
+          signOut={this.signOut}
+      />
     )
   }
 

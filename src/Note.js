@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Note = ({ note, deleteListItem, selectItem }) => {
+const Note = ({ note, deleteListItem, selectItem, currentNote}) => {
     const deleteItem = (ev) =>{
         ev.preventDefault()
-        deleteListItem(note)
+        deleteListItem(currentNote)
     }
     const handleSelect = (ev) =>{
         ev.preventDefault()

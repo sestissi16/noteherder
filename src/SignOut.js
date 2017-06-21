@@ -3,12 +3,14 @@ import './SignOut.css'
 
 const SignOut = ({ signOut }) => {
     return(
-        <button 
-            className="SignOutButton"
-            onClick={signOut}
-        >
-            Sign Out
-        </button>
+        // <div className="SignOutDiv">
+            <button 
+                className="SignOutButton"
+                onClick={signOut}
+            >
+                Sign Out
+            </button>
+        // </div>
     )
 }
 

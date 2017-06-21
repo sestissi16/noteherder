@@ -12,7 +12,8 @@ const Main = (props) =>{
             <NoteList 
                 notes={props.notes} 
                 deleteListItem={props.deleteListItem} 
-                selectItem={props.selectItem} 
+                selectItem={props.selectItem}
+                currentNote={props.currentNote} 
             />
             <NoteForm 
                 saveNote={props.saveNote} 

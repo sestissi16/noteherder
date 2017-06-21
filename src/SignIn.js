@@ -1,17 +1,11 @@
 import React from 'react'
 import './SignIn.css'
-import { auth, githubProvider, facebookProvider } from './base'
+import { auth, githubProvider, facebookProvider, googleProvider } from './base'
 
 const SignIn = () => {
-    const authenticateGit = () => {
+    const authenticate = (provider) => {
         auth
-            .signInWithPopup(githubProvider)
-            
-        
-    }
-    const authenticateFace = () => {
-        auth
-            .signInWithPopup(facebookProvider)
+            .signInWithPopup(provider)
     }
 
     return(
@@ -23,17 +17,23 @@ const SignIn = () => {
             <div className="buttons">
                 <button 
                     className="SignInGithub"
-                    onClick={authenticateGit}
+                    onClick={() => authenticate(githubProvider)}
                 >
                     <img className="github-pic" src="https://cdn.worldvectorlogo.com/logos/github-icon.svg" alt="github logo"/>
                     Sign in with Github!
                 </button>
                 <button
                     className="SignInFacebook"
-                    onClick={authenticateFace}
+                    onClick={() => authenticate(facebookProvider)}
                 >
                     <img className="facebook-pic" src="http://www.freeiconspng.com/uploads/facebook-announces-clickable-hashtags--resolution-media-17.png" alt="facebook logo" />
                     Sign in with Facebook!
+                </button>
+                <button
+                    className="SignInGoogle"
+                    onClick={() => authenticate(googleProvider)}
+                >
+                    Sign in with Google!
                 </button>
             </div>
         </div>
