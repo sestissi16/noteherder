@@ -10,7 +10,10 @@ const Main = (props) =>{
     
     return(
         <div className="Main">
-            <Sidebar newNoteFunc={props.newNoteFunc} signOut={props.signOut} />
+            <Sidebar 
+                newNoteFunc={props.newNoteFunc} 
+                signOut={props.signOut} 
+            />
             <NoteList 
                 notes={props.notes} 
                 deleteListItem={props.deleteListItem} 
@@ -21,14 +24,14 @@ const Main = (props) =>{
             <Switch>
                 <Route path="/notes/:id" render={(navProps) => (
                     <NoteForm 
-                        saveNote={props.saveNote} 
-                        currentNote={props.currentNote} 
+                        {...props} 
+                        {...navProps}
                     />
                 )} />
                 <Route path="/notes" render={(navProps) => (
                     <NoteForm 
-                        saveNote={props.saveNote} 
-                        currentNote={props.currentNote} 
+                        {...props}
+                        {...navProps} 
                     />
                 )} />
             </Switch>

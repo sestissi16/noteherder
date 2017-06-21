@@ -132,6 +132,14 @@ class App extends Component {
     const actions ={
       saveNote: this.saveNote,
       deleteListItem: this.deleteListItem,
+      selectItem: this.selectItem,
+      newNoteFunc: this.newNoteFunc,
+      resetCurrentNote: this.resetCurrentNote,
+      signOut: this.signOut,
+    }
+    const noteData = {
+      notes: this.state.notes,
+      currentNote: this.state.currentNote,
     }
     return(
       <div className="App">
@@ -139,13 +147,9 @@ class App extends Component {
         <Switch>
           <Route path="/notes" render={() => (
             this.signedIn()
-              ? <Main 
-                  notes={this.state.notes}
-                  currentNote={this.state.currentNote} 
+              ? <Main
+                  {...noteData}
                   {...actions}
-                  selectItem={this.selectItem}
-                  newNoteFunc={this.newNoteFunc} 
-                  signOut={this.signOut}
                 />
               : <Redirect to="/sign-in" />
           )} />
@@ -154,7 +158,7 @@ class App extends Component {
               ? <SignIn />
               : <Redirect to="/notes" />
           )} />
-          
+
           <Route render={() => <Redirect to="/notes" />} />
         </Switch>
       </div>
