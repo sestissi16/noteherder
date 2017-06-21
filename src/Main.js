@@ -1,4 +1,6 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+
 import './Main.css'
 import Sidebar from './Sidebar'
 import NoteList from './NoteList'
@@ -15,10 +17,21 @@ const Main = (props) =>{
                 selectItem={props.selectItem}
                 currentNote={props.currentNote} 
             />
-            <NoteForm 
-                saveNote={props.saveNote} 
-                currentNote={props.currentNote} 
-            />
+            
+            <Switch>
+                <Route path="/notes/:id" render={(navProps) => (
+                    <NoteForm 
+                        saveNote={props.saveNote} 
+                        currentNote={props.currentNote} 
+                    />
+                )} />
+                <Route path="/notes" render={(navProps) => (
+                    <NoteForm 
+                        saveNote={props.saveNote} 
+                        currentNote={props.currentNote} 
+                    />
+                )} />
+            </Switch>
         </div>
     )
 }
