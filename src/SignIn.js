@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './SignIn.css'
-import { auth, githubProvider, googleProvider } from './base'
+import { auth, githubProvider, googleProvider, facebookProvider } from './base'
 
 const SignIn = () => {
   const authenticate = (provider) => {
@@ -21,6 +21,12 @@ const SignIn = () => {
         onClick={() => authenticate(googleProvider)}
       >
         Sign in with Google
+      </button>
+      <button
+        className="SignIn"
+        onClick={() => authenticate(facebookProvider)}
+      >
+        Sign in with Facebook
       </button>
     </div>
   )
