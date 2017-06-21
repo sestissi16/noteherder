@@ -9,14 +9,14 @@ class NoteForm extends Component{
             if (newId !== this.props.currentNote.id) {
                 const note = nextProps.notes[newId]
                 if (note) {
-                    this.props.setCurrentNote(note)
+                    this.props.selectItem(note)
                 }
                 else if (Object.keys(nextProps.notes).length > 0){
                     this.props.history.push('/notes')
                 }
             }
             else if (this.props.currentNote.id) {
-                this.props.resetCurrentNote()
+                this.props.newNoteFunc()
             }
         }
     }
