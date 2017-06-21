@@ -1,36 +1,23 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-const Note = ({ note, deleteListItem, selectItem, currentNote}) => {
-    const deleteItem = (ev) =>{
-        ev.preventDefault()
-        deleteListItem(currentNote)
-    }
-    const handleSelect = (ev) =>{
-        ev.preventDefault()
-        selectItem(note)
-    }
-
-    return(
-        <a onClick={handleSelect}>
-            <li>
-                <div className="note" id={note.id}>
-                    <div className="note-title"> 
-                        {note.title} 
-                    </div>
-                    <div className="note-body">
-                        <p>
-                            {note.body}
-                        </p>
-                    </div>
-                    <div className="note-button">
-                        <button className="delBtn" onClick={deleteItem}>
-                            <span role="img" aria-label="delete">🗑️</span>
-                        </button>
-                    </div>
-                </div>
-            </li>
-        </a>
-    )
+const Note = ({ note }) => {
+  return (
+    <NavLink to={`/notes/${note.id}`}>
+      <li>
+        <div className="note">
+          <div className="note-title">
+            {note.title}
+          </div>
+          <div className="note-body">
+            <p>
+              {note.body}
+            </p>
+          </div>
+        </div>
+      </li>
+    </NavLink>
+  )
 }
 
 export default Note

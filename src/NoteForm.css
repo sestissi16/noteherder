@@ -1,9 +1,6 @@
 .NoteForm {
   flex-grow: 1;
   padding: 0 3rem;
-  box-sizing: border-box;
-  /*background-image: url("http://www.myfreetextures.com/wp-content/uploads/2011/06/grungy-rough-old-worn-parchment-paper.jpg");  */
-  background-image: url("http://www.powerpointhintergrund.com/download/grunge-parchment-background-3395")
 }
 .NoteForm .form-actions {
   padding-top: 1rem;
@@ -16,18 +13,17 @@
   background: none;
   padding: 0;
 }
+.NoteForm button[type="submit"] {
+  background-color: #008BF8;
+  border-radius: 4px;
+  color: white;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
 .NoteForm button i.fa {
   color: #999;
   font-size: 2rem;
   margin: 0;
-}
-.NoteForm button[type="submit"]{
-    border-radius: 6px;
-    background-color: rgb(89, 64, 2);
-    color: #ffffff;
-    border: 1px solid rgb(51, 37, 2);
-    font-size: 1.4rem;
-    padding: 1rem;
 }
 .NoteForm form {
   margin: 0 auto;
@@ -37,19 +33,16 @@ input[name="title"] {
   border: none;
   font-size: 200%;
   font-family: "Fauna One";
-  color: #2d2205;
+  color: #008BF8;
   font-weight: 400;
   width: 100%;
-  background: none;
 }
 input[name="title"] {
   outline: none;
 }
 textarea {
-  border-color: #3a3827;
+  border-color: #eee;
   width: 100%;
   height: calc(100vh - 140px);
   font-size: 1.3em;
-  background: none;
-  color:#2d2205;
 }

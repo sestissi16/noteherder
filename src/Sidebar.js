@@ -7,27 +7,21 @@ import newHover from './new-hover.png'
 import newIcon from './new.png'
 import SignOut from './SignOut'
 
-const Sidebar = ({ signOut }) =>{
-    // const handleClick = (ev) => {
-    //     ev.preventDefault()
-    //     newNoteFunc()
-    // }
-    return(
-        <nav className="Sidebar">
-            <div className="logo">
-                <img src={quill} alt="Noteherder" />
-            </div>
-            <div className="SignOutBtn">
-                <SignOut signOut={signOut}/>
-            </div>
-            <Link to="/notes">
-                <button className="new-note">
-                    <img src={newHover} alt="New note" />
-                    <img className="outline" src={newIcon} alt="New note" />
-                </button>
-            </Link>
-        </nav>
-    )
+const Sidebar = ({ signOut }) => {
+  return (
+    <nav className="Sidebar">
+      <div className="logo">
+        <img src={quill} alt="Noteherder" />
+      </div>
+      <Link to="/notes" className="new-note">
+        <button>
+          <img src={newHover} alt="New note" />
+          <img className="outline" src={newIcon} alt="New note" />
+        </button>
+      </Link>
+      <SignOut signOut={signOut} />
+    </nav>
+  )
 }
 
 export default Sidebar
