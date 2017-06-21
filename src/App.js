@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom'
+
 import './App.css';
 import Main from './Main'
 import base, { auth } from './base'
@@ -112,28 +114,28 @@ class App extends Component {
       )
   }
 
-  renderMain = () => {
+  render() {
     const actions ={
       saveNote: this.saveNote,
       deleteListItem: this.deleteListItem,
     }
     return(
-      <Main 
-          notes={this.state.notes}
-          currentNote={this.state.currentNote} 
-          {...actions}
-          selectItem={this.selectItem}
-          newNoteFunc={this.newNoteFunc} 
-          signOut={this.signOut}
-      />
-    )
-  }
-
-
-  render() {
-    return (
       <div className="App">
-        { this.signedIn() ? this.renderMain() : <SignIn />}
+        {/*{ this.signedIn() ? this.renderMain() : <SignIn />}*/}
+        <Switch>
+          <Route path="/notes" render={() => (
+            <Main 
+              notes={this.state.notes}
+              currentNote={this.state.currentNote} 
+              {...actions}
+              selectItem={this.selectItem}
+              newNoteFunc={this.newNoteFunc} 
+              signOut={this.signOut}
+            />
+          )} />
+          <Route path="/sign-in" component={SignIn} />
+          <Route render={() => <Redirect to="/notes" />} />
+        </Switch>
       </div>
     );
   }
