@@ -10,7 +10,7 @@ const Main = (props) => {
   return (
     <div className="Main">
       <Sidebar signOut={props.signOut} />
-      <NoteList notes={props.notes} />
+      <NoteList {...props} />
 
       <Switch>
         <Route path="/notes/:id" render={(navProps) => (
