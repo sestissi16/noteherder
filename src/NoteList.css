@@ -13,9 +13,9 @@
 .NoteList h3 {
   color: #999;
   text-transform: uppercase;
-  font-size: 2rem;
-  font-family: Oxygen;
-  font-weight: 300;
+  font-size: 3rem;
+  font-family: 'Pirata One', cursive;
+  font-weight: 400;
   letter-spacing: 3px;
   margin: 20px 2rem;
 }
@@ -73,8 +73,8 @@ ul#notes li:hover .note {
 }
 ul#notes li .note-title {
   color: #4a4a4a;
-  font-family: "Fauna One";
-  font-size: 120%;
+  font-family: 'IM Fell DW Pica SC', serif;
+  font-size: 160%;
   font-weight: 400;
   white-space: nowrap;
   overflow-x: hidden;
