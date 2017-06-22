@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC|Pirata+One');
+
 .NoteForm {
   flex-grow: 1;
   padding: 0 3rem;
@@ -7,6 +9,14 @@
   margin-left: -2rem;
   display: flex;
   align-content: center;
+}
+.NoteForm .title-text{
+  font-family: 'Pirata One', cursive;
+  font-size: 40px;
+}
+.NoteForm .body-text{
+  font-family: 'IM Fell DW Pica SC', serif;
+  font-size: 25px;
 }
 .NoteForm button {
   border: 8px double rgba(81, 22, 21, 0.8);

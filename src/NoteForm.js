@@ -36,6 +36,7 @@ class NoteForm extends Component {
         <form>
           <p>
             <input
+              className="title-text"
               type="text"
               name="title"
               placeholder="Title your note"
@@ -45,6 +46,7 @@ class NoteForm extends Component {
           </p>
           <p>
             <textarea
+              className="body-text"
               name="body"
               placeholder="Just start typing..."
               onChange={this.handleChanges}
