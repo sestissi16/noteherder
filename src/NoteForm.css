@@ -3,6 +3,7 @@
 .NoteForm {
   flex-grow: 1;
   padding: 0 3rem;
+  background-image: url("http://www.powerpointhintergrund.com/download/grunge-parchment-background-3395")
 }
 .NoteForm .form-actions {
   padding-top: 1rem;
@@ -13,10 +14,12 @@
 .NoteForm .title-text{
   font-family: 'Pirata One', cursive;
   font-size: 40px;
+  background: transparent;
 }
 .NoteForm .body-text{
   font-family: 'IM Fell DW Pica SC', serif;
   font-size: 25px;
+  background: transparent;
 }
 .NoteForm button {
   border: 8px double rgba(81, 22, 21, 0.8);
@@ -46,16 +49,19 @@ input[name="title"] {
   border: none;
   font-size: 200%;
   font-family: "Fauna One";
-  color: #008BF8;
+  color: #302506;
   font-weight: 400;
   width: 100%;
 }
 input[name="title"] {
   outline: none;
 }
+input[name="body"]{
+  color:#302506;
+}
 textarea {
-  border-color: #eee;
+  border-color: rgba(48, 37, 6, 0.8);
   width: 100%;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 185px);
   font-size: 1.3em;
 }

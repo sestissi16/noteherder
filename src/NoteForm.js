@@ -42,6 +42,7 @@ class NoteForm extends Component {
               placeholder="Title your note"
               onChange={this.handleChanges}
               value={this.props.currentNote.title}
+              autoFocus
             />
           </p>
           <p>
