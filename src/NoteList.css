@@ -100,13 +100,3 @@ ul#notes li .note {
   text-decoration: none;
 }
 
-ul#notes a li .del-btn {
-  padding: 1rem;
-  background-color: rgba(124, 117, 74, 0.8);
-  border-radius: 4px;
-}
-
-ul#notes a li .del-btn:hover {
-  background-color:#152847;
-  box-shadow: 2px 2px #242e30;
-}
