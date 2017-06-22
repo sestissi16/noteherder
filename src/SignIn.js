@@ -18,21 +18,21 @@ const SignIn = () => {
             className="SignInGithub"
             onClick={() => authenticate(githubProvider)}
           >
-            <img src="http://www.freeiconspng.com/uploads/github-logo-icon-30.png" alt="github logo" />
+            <img className="logos" src="http://www.freeiconspng.com/uploads/github-logo-icon-30.png" alt="github logo" />
             Sign in with GitHub
           </button>
           <button
             className="SignInGoogle"
             onClick={() => authenticate(googleProvider)}
           >
-            <img src="https://maxcdn.icons8.com/Share/icon/Logos//google_logo1600.png" alt="google logo" />
+            <img className="logos" src="https://maxcdn.icons8.com/Share/icon/Logos//google_logo1600.png" alt="google logo" />
             Sign in with Google
           </button>
           <button
             className="SignInFacebook"
             onClick={() => authenticate(facebookProvider)}
           >
-            <img src="http://www.freeiconspng.com/uploads/facebook-transparent-pics-18.png" alt="facebook logo" />
+            <img className="logos" src="http://www.freeiconspng.com/uploads/facebook-transparent-pics-18.png" alt="facebook logo" />
             Sign in with Facebook
           </button>
         </div>
