@@ -1,3 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC|Pirata+One');
+.div-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.SignInPage{
+  background-image: url("http://medievaljourney.com/wp-content/uploads/2016/02/quill-leather-journal-feather-plume-handmade-leather-journal-notebook-diary-with-parchment-pages.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+.SignInPage h1{
+  margin-top: -0.2px;
+  margin-left: 30px;
+  color: #000;
+  font-family: 'IM Fell DW Pica SC', serif;
+  font-size: 100px;
+}
+.SignInPage h1 span{
+  border: 10px double rgba(55, 0, 0, 1);
+  background-color: rgba(101, 16, 10, 1); 
+  border-radius: 20px;
+  color:rgba(229, 172, 57, 1);
+  font-size:120px;
+  padding: 5px;
+  /*text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;*/
+}
+.SignInPage h3{
+  text-align: center;
+  margin-top: -1px;
+  /*border: 10px double rgba(55, 0, 0, 0.8);
+  background-color: rgba(101, 16, 10, 0.8); */
+  border-radius: 20px;
+  color:rgba(229, 172, 57, 1);
+  text-shadow: -2px 0 rgba(55, 0, 0, 0.8), 0 2px rgba(55, 0, 0, 0.8), 2px 0 rgba(55, 0, 0, 0.8), 0 -2px rgba(55, 0, 0, 0.8);
+  font-family: 'IM Fell DW Pica SC', serif;
+  font-size: 60px;
+
+}
+
 .SignIn {
   background-color: #008BF8;
   border: 0;
