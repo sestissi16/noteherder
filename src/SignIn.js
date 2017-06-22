@@ -13,24 +13,29 @@ const SignIn = () => {
       <div className="SignInPage">
         <h1 className="welcome">Welcome to <span>Noteherder</span></h1>
         <h3 className="solgan"><span>Where we round up all of those pesky notes!</span></h3>
-        <button
-          className="SignIn"
-          onClick={() => authenticate(githubProvider)}
-        >
-          Sign in with GitHub
-        </button>
-        <button
-          className="SignIn"
-          onClick={() => authenticate(googleProvider)}
-        >
-          Sign in with Google
-        </button>
-        <button
-          className="SignIn"
-          onClick={() => authenticate(facebookProvider)}
-        >
-          Sign in with Facebook
-        </button>
+        <div className="button-container">
+          <button
+            className="SignInGithub"
+            onClick={() => authenticate(githubProvider)}
+          >
+            <img src="http://www.freeiconspng.com/uploads/github-logo-icon-30.png" alt="github logo" />
+            Sign in with GitHub
+          </button>
+          <button
+            className="SignInGoogle"
+            onClick={() => authenticate(googleProvider)}
+          >
+            <img src="https://maxcdn.icons8.com/Share/icon/Logos//google_logo1600.png" alt="google logo" />
+            Sign in with Google
+          </button>
+          <button
+            className="SignInFacebook"
+            onClick={() => authenticate(facebookProvider)}
+          >
+            <img src="http://www.freeiconspng.com/uploads/facebook-transparent-pics-18.png" alt="facebook logo" />
+            Sign in with Facebook
+          </button>
+        </div>
       </div>
     </div>
   )
