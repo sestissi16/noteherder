@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       notes: {},
       uid: null,
-      currentNote: this.blankNote(),
+      // currentNote: this.blankNote(),
     }
   }
 
@@ -54,13 +54,13 @@ class App extends Component {
     }
   }
 
-  blankNote = () => {
-    return{
-      id: null,
-      title: '',
-      body:'',
-    }
-  }
+  // blankNote = () => {
+  //   return{
+  //     id: null,
+  //     title: '',
+  //     body:'',
+  //   }
+  // }
 
   saveNote = (note) => {
     let shouldRedirect = false
@@ -79,7 +79,7 @@ class App extends Component {
   removeNote = (note) => {
     const notes = {...this.state.notes}
     notes[note.id] = null
-    this.resetCurrentNote()
+    // this.resetCurrentNote()
     this.setState({ notes })
     this.props.history.push('/notes')
   }
@@ -108,26 +108,26 @@ class App extends Component {
     auth.signOut()
   }
 
-  setCurrentNote = (note) => {
-    this.setState({ currentNote: note })
-  }
+  // setCurrentNote = (note) => {
+  //   this.setState({ currentNote: note })
+  // }
 
-  resetCurrentNote = () => {
-    this.setCurrentNote(this.blankNote())
-  }
+  // resetCurrentNote = () => {
+  //   this.setCurrentNote(this.blankNote())
+  // }
 
   render() {
     const actions = {
       saveNote: this.saveNote,
       removeNote: this.removeNote,
-      setCurrentNote: this.setCurrentNote,
-      resetCurrentNote: this.resetCurrentNote,
+      // setCurrentNote: this.setCurrentNote,
+      // resetCurrentNote: this.resetCurrentNote,
       signOut: this.signOut,
     }
-    const noteData = {
-      notes: this.state.notes,
-      currentNote: this.state.currentNote,
-    }
+    // const noteData = {
+    //   notes: this.state.notes,
+    //   currentNote: this.state.currentNote,
+    // }
 
     return (
       <div className="App">
@@ -135,7 +135,7 @@ class App extends Component {
           <Route path="/notes" render={() => (
             this.signedIn()
               ? <Main
-                  {...noteData}
+                  notes={this.state.notes}
                   {...actions}
                 />
               : <Redirect to="/sign-in" />

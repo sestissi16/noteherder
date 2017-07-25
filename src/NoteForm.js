@@ -1,33 +1,57 @@
 import React, { Component } from 'react'
+import RichTextEditor from 'react-rte'
 
 import './NoteForm.css'
 
 class NoteForm extends Component {
-  componentWillReceiveProps(nextProps) {
-    const newId = nextProps.match.params.id
+  constructor(props){
+    super(props)
+    this.state = {
+      note: this.blankNote(),
+      editorValue: RichTextEditor.createEmptyValue()
+    }
+  }
 
-    if (newId) {
-      if (newId !== this.props.currentNote.id) {
-        const note = nextProps.notes[newId]
-        if (note) {
-          this.props.setCurrentNote(note)
-        } else if (Object.keys(nextProps.notes).length > 0) {
-          this.props.history.push('/notes')
-        }
-      }
-    } else if (this.props.currentNote.id) {
-      this.props.resetCurrentNote()
+  componentWillReceiveProps({ match, notes}) {
+    const idFromUrl = match.params.id
+    const note = notes[idFromUrl] || this.blankNote()
+    
+    const noteNotFound = (idFromUrl && !note.id)
+    if(noteNotFound) this.props.history.push('/notes')
+
+    let editorValue = this.state.editorValue
+    if (editorValue.toString('html') !== note.body) {
+      editorValue = RichTextEditor.createValueFromString(note.body, 'html')
+    }
+
+    this.setState({ note, editorValue })
+  }
+
+  blankNote = () => {
+    return {
+      id: null,
+      title: '',
+      body: '',
     }
   }
 
   handleChanges = (ev) => {
-    const note = {...this.props.currentNote}
+    const note = {...this.state.note}
     note[ev.target.name] = ev.target.value
-    this.props.saveNote(note)
+    this.setState(
+      { note },
+      this.props.saveNote(note)
+    )
+  }
+
+  handleEditorChanges = (editorValue) => {
+    const note = {...this.state.note}
+    note.body = editorValue.toString('html')
+    this.setState({ note, editorValue }, () => this.props.saveNote(note))
   }
 
   handleRemove = (ev) => {
-    this.props.removeNote(this.props.currentNote)
+    this.props.removeNote(this.state.note)
   }
 
   render() {
@@ -41,19 +65,16 @@ class NoteForm extends Component {
               name="title"
               placeholder="Title your note"
               onChange={this.handleChanges}
-              value={this.props.currentNote.title}
+              value={this.state.note.title}
               autoFocus
             />
           </p>
-          <p>
-            <textarea
-              className="body-text"
-              name="body"
-              placeholder="Just start typing..."
-              onChange={this.handleChanges}
-              value={this.props.currentNote.body}
-            ></textarea>
-          </p>
+          <RichTextEditor 
+            name="body"
+            placeholder="Just start typing..."
+            value={this.state.editorValue}
+            onChange={this.handleEditorChanges}
+          />
           <button
            type="button"
            onClick={this.handleRemove}
