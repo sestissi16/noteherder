@@ -7,18 +7,23 @@
 }
 
 .SignInPage{
-  background-image: url("http://medievaljourney.com/wp-content/uploads/2016/02/quill-leather-journal-feather-plume-handmade-leather-journal-notebook-diary-with-parchment-pages.jpg");
-  background-size: cover;
-  height: 100vh;
+  /* background-image: url("http://medievaljourney.com/wp-content/uploads/2016/02/quill-leather-journal-feather-plume-handmade-leather-journal-notebook-diary-with-parchment-pages.jpg"); */
+  /* background-image: url("http://revistaentoas.com/entodas/wp-content/uploads/Pluma2.jpg"); */
+  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/6b/77/4d/6b774d3d9d42d43c7a57e1930377a1b5.jpg");
+  background-size: 100% 100%;
+  height: 100vh; 
 }
 .SignInPage h1{
+  text-align: center;
   margin-top: -0.2px;
-  margin-left: 30px;
-  color: #000;
+  /* margin-left: 30px;  */ 
+  color: rgba(229, 172, 57, 1);
+  text-shadow: -2px 0 rgba(55, 0, 0, 0.8), 0 2px rgba(55, 0, 0, 0.8), 2px 0 rgba(55, 0, 0, 0.8), 0 -2px rgba(55, 0, 0, 0.8);
   font-family: 'IM Fell DW Pica SC', serif;
   font-size: 100px;
 }
 .SignInPage h1 span{
+  text-align: center;
   border: 10px double rgba(55, 0, 0, 1);
   background-color: rgba(101, 16, 10, 1); 
   border-radius: 20px;
@@ -27,19 +32,24 @@
   padding: 5px;
   /*text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;*/
 }
-.SignInPage h3{
+/* .SignInPage h3{
+  text-align: center;
+} 
+.SignInPage h3 span{
   text-align: center;
   margin-top: -1px;
-  /*border: 10px double rgba(55, 0, 0, 0.8);
-  background-color: rgba(101, 16, 10, 0.8); */
+  border: 3px solid rgba(55, 0, 0, 0.7);
+  padding: 5px;
+  background-color: rgba(101, 16, 10, 0.6);
   border-radius: 20px;
   color:rgba(229, 172, 57, 1);
   text-shadow: -2px 0 rgba(55, 0, 0, 0.8), 0 2px rgba(55, 0, 0, 0.8), 2px 0 rgba(55, 0, 0, 0.8), 0 -2px rgba(55, 0, 0, 0.8);
   font-family: 'IM Fell DW Pica SC', serif;
   font-size: 60px;
 
-}
+} */
 .button-container{
+  margin-top: 170px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
