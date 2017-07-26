@@ -8,3 +8,6 @@
 .SignOut button i.fa {
   font-size: 3rem;
 }
+.SignOut button:hover{
+  color:rgba(247, 185, 59, 1);
+}

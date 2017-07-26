@@ -35,10 +35,12 @@
   cursor: pointer;
   font-size:30px;
   }
-  .Sidebar button img {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    transition: opacity 0.25s ease-in-out; }
-    .Sidebar button:hover img.outline {
-      opacity: 0; }
+.Sidebar button img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.25s ease-in-out; }
+.Sidebar button:hover img.outline {
+  color: rgba(229, 172, 57, 1);
+  opacity: 0; 
+}
