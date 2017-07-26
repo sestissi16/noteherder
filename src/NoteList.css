@@ -17,9 +17,9 @@
 .NoteList h3 {
   color: #fff;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2.7rem;
   font-family: 'Pirata One', cursive;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 3px;
   margin: 20px 2rem;
 }
@@ -27,7 +27,7 @@
 ul#notes {
   border-top: 1px solid #eee;
   overflow-y: scroll;
-  height: calc(100vh - 72px);
+  height: calc(96vh - 72px);
   list-style: none;
   margin-top: 1em;
   padding: 0;
@@ -46,7 +46,7 @@ ul#notes a:active {
 
 ul#notes > a > li {
   height: 100px;
-  font-size: 90%;
+  font-size: 80%;
   cursor: pointer;
   overflow: hidden;
   background-color: rgba(232, 207, 139, 0.65);
@@ -86,6 +86,7 @@ ul#notes li .note-title {
   text-overflow: ellipsis;
 }
 ul#notes li .note-body {
+  font-size: 80%;
   height: 54px;
   overflow: hidden;
   margin-top: 0.5rem;
