@@ -3,7 +3,8 @@
 .NoteForm {
   flex-grow: 1;
   padding: 0 3rem;
-  background-image: url("http://www.powerpointhintergrund.com/download/grunge-parchment-background-3395")
+  background-image: url("http://www.powerpointhintergrund.com/download/grunge-parchment-background-3395");
+  background-size: 100% 100%;
 }
 .NoteForm .form-actions {
   padding-top: 1rem;
