@@ -70,6 +70,9 @@ class NoteForm extends Component {
             />
           </p>
           <RichTextEditor 
+            toolbarClassName="demo-toolbar"
+            editorClassName="demo-editor"
+            className="body-text"
             name="body"
             placeholder="Just start typing..."
             value={this.state.editorValue}
